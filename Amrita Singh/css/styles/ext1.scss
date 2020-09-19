@@ -1,0 +1,9 @@
+$bgcolor:red;
+$color:yellow;
+$text:uppercase;
+
+h1{
+    background-color: $bgcolor;
+    color:$color;
+    text-transform: $text;
+} 

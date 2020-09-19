@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+</head>
+<body>
+    <h1>Make Your Choice:</h1> 
+    <select id="select" onchange="myfunc()";>
+        <option>--Select a product--</option>
+        <option value="LG<br>SAMSUNG<br>PANASONIC">Television</option>
+        <option value="LENOVO<br>DELL<br>MACBOOK<br>Acer">Laptop</option>
+        <option value="REDMI<br>MICROMAX<br>SAMSUNG">Mobile</option>
+        <option value="CHEMISTRY<br>SCIENCE<br>PHYSICS">Book</option>
+
+    </select>
+    <p id="first"></p>
+<script>
+    function myfunc()
+    {
+        var a1=document.getElementById("select");
+        var output=a1.options[a1.selectedIndex].value;
+        document.getElementById("first").innerHTML = output;
+    }
+</script>    
+    
+
+</body>
+</html>
