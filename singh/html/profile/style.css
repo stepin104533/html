@@ -1,0 +1,47 @@
+* {
+margin:0;
+padding:0;
+}
+body{
+    background-image: url(portfolio-background.jpg);
+    -webkit-background-size:cover ;
+    background-size: cover;
+    background-position: center center;
+    height:100vh ;
+}
+.wrapper ul{
+    list-style: none;
+    margin-top: 20;
+}
+.wrapper{
+    width: 860px;
+    margin:0 auto;
+    padding-top: 25px;
+}
+.wrapper ul  li{
+    background: #352020;
+    width:160px;
+    border: 1px solid #fff;
+     height:30px;
+     text-align:center;
+     line-height: 30px;
+     float:left;
+     color:#fff;
+     font-size: 14px;
+     position: relative;
+     font-family:big john;
+}
+.wrapper ul li:hover{
+    background:lightcoral;
+}
+.wrapper ul ul{
+    display:none;
+}
+.wrapper ul li:hover>ul{
+    display:block;
+}
+.wrapper ul ul ul{
+    margin-left: 170px;
+    top:0;
+    position: absolute;
+}
