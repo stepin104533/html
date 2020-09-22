@@ -1,66 +1,101 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function store () {
-     var inputUsername= document.getElementById("username");
-     var inputPassword= document.getElementById("password");
-     localStorage.setItem("username", inputUsername.value);
-     localStorage.setItem("password", inputPassword.value);
-    };
-    //function to sign in
-    function login() {
- var inputUsername = localStorage.getItem("username");
- var inputPassword = localStorage.getItem("password");
- if (username != "undefined" || username != "null" || password != "undefined" || password !="null")
- {
-    document.getElementByID('welcomeMessage').innerHTML = "Welcome " + username + "!";
-    } else
-     document.getElementById('welcomeMessage').innerHTML = "Hello!";
-     }
-    </script>
-    <style>
-        h2{
-            background-color: palevioletred;
-        }
+    function store(){
 
-    </style>
+    var name = document.getElementById('name');
+    var pswd = document.getElementById('pswd');
+    var lower = /[a-z]/g;
+    var upper = /[A-Z]/g;
+    var numbers = /[0-9]/g;
+
+    if(name.value.length == 0){
+        alert('Please fill in email');
+
+    }else if(pw.value.length == 0){
+        alert('Please fill in password');
+
+    }else if(name.value.length == 0 && pswd.value.length == 0){
+        alert('Please fill in email and password');
+
+    }else if(pswd.value.length > 8){
+        alert('Max of 8');
+
+    }else if(!pswd.value.match(numbers)){
+        alert('please add 1 number');
+
+    }else if(!pswd.value.match(Letters)){
+        alert('please add 1 uppercase letter');
+
+    }else if(!pswd.value.match(Letters)){
+        alert('please add 1 lovercase letter');
+
+    }else{
+        localStorage.setItem('name', name.value);
+        localStorage.setItem('pswd', pw.value);
+        alert('Your account has been created');
+    }
+}
+
+//checking
+function check(){
+    var storedName = localStorage.getItem('name');
+    var storedPswd = localStorage.getItem('pswd');
+
+    var userName = document.getElementById('userName');
+    var userPswd = document.getElementById('userPswd');
+    var Remember = document.getElementById("remember");
+
+    if(userName.value == storedName && userPswd.value == storedPswd){
+        alert('You are logged in.');
+    }else{
+        alert('Error on login');
+    }
+}
+
+</script>
 </head>
 <body>
-        <div class="popup">
-        <h2>Welcome Guest!</h2>
-        <p>Please enter your login and password here</p>
-        <div>
-            <label for="email">Login</label>
-            <input type="text" id="username" value="" /><br>
-        </div>
-        <br>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" value="" />
-        </div>
-      <input type="button" value="Log In" />
-        <a class="close" href="#close"></a>
-    </div>
-     <div class="popup">
-    <h2>Register</h2>
-    <p>Please enter your details here</p>
-    <div>
-        <label for="email">Login (Username)</label>
-        <input type="text" id="username" value="" />
-    </div>
-    <br>
-    <div>
-        <label for="pass">Password</label>
-        <input type="password" id="password" value="" />
-    </div>
-    <br>
-    <button onclick="store()" type="button">Sign up </button>   or   <a href="#login_form" id="login_pop">Log In</a>
-    <a class="close" href="#close"></a>
-</div>
+    
 </body>
 </html>
+
+
+<div class="login">
+    <form name='form-login'>
+
+        <h1>REGISTER</h1>
+
+        <label for="name">Email</label>
+        <input type="email" id="name" placeholder="Username" required>
+
+        <label for="pswd">Password</label>
+        <input type="password"
+               id= "pswd"
+               placeholder="Password" required>
+
+        <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
+
+    </form>
+</div>
+
+<div class="login">
+    <form name='form-login'>
+
+        <h1>SIGN IN</h1>
+
+        <label for="userName">Email</label>
+        <input type="email" id="userName" placeholder="Username" required>
+
+        <label for="userPswd">Password</label>
+        <input type="password" id= "usersPwd" placeholder="Password" required>
+        </div>
+
+        <input id= "login_btn" type="submit" value="Login" onclick="check()">
+
+    </form>
+</div>
