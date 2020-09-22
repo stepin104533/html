@@ -26,7 +26,7 @@ var mobile=[
 
 }
 ];
-for(let c in mobile){
-    console.log(mobile[c]);
-}
+//for(let c in mobile){
+   // console.log(mobile[c]);
 
+mobile.forEach(color=>console.log(mobile))
