@@ -1,7 +1,7 @@
 var register = function(name){
     return function validate(){
  
-        if(username==" "){
+        if(name==" "){
             console.log("invalid name");
         }
             else{
